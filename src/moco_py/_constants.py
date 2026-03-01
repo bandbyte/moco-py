@@ -1,0 +1,9 @@
+"""Internal constants for the MOCO API client."""
+
+BASE_URL_TEMPLATE = "https://{domain}.mocoapp.com/api/v1"
+ENV_API_KEY = "MOCO_API_KEY"
+ENV_DOMAIN = "MOCO_DOMAIN"
+DEFAULT_TIMEOUT = 30.0
+DEFAULT_MAX_RETRIES = 2
+DEFAULT_PER_PAGE = 100
+RETRY_STATUS_CODES = {429, 500, 502, 503, 504}

@@ -1,0 +1,72 @@
+[project]
+name = "moco-py"
+version = "0.0.0"
+description = "Python client library for the MOCO ERP API"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+    "pydantic>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/bandbyte/moco-py"
+Documentation = "https://github.com/bandbyte/moco-py"
+Repository = "https://github.com/bandbyte/moco-py"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/moco_py"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: tests that hit a live MOCO API (require MOCO_API_KEY and MOCO_DOMAIN env vars)",
+]
+
+[tool.ruff]
+src = ["src"]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+packages = ["moco_py"]
+mypy_path = "src"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version_provider = "pep621"
+tag_format = "v$version"
+update_changelog_on_bump = true
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+version_variables = ["src/moco_py/__init__.py:__version__"]
+tag_format = "v{version}"
+build_command = "uv build"
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+
+[tool.semantic_release.branches.main]
+match = "main"
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.13.9",
+    "mypy>=1.0",
+    "pre-commit>=4.5.1",
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "python-semantic-release>=10.5.3",
+    "respx>=0.22",
+    "ruff>=0.8",
+]
