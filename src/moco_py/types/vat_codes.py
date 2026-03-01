@@ -16,7 +16,7 @@ class VatCodeSale(BaseModel):
     print_gross_total: bool
     notice_tax_exemption: str
     notice_tax_exemption_alt: str
-    code: str
+    code: str | None = None
     credit_account: str | None = None
 
 
@@ -28,4 +28,4 @@ class VatCodePurchase(BaseModel):
     reverse_charge: bool
     intra_eu: bool
     active: bool
-    code: str
+    code: str | None = None
