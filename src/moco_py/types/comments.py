@@ -18,6 +18,6 @@ class Comment(BaseModel):
     commentable_type: CommentableType
     text: str
     manual: bool
-    user: EmbeddedUser
+    user: EmbeddedUser | None = None
     created_at: datetime.datetime
     updated_at: datetime.datetime
