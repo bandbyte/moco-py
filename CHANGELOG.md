@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.2 (2026-03-01)
+
+### Bug Fixes
+
+- **types**: Make VatCode.code field optional
+  ([`f26939c`](https://github.com/bandbyte/moco-py/commit/f26939ca0adc9830b87e4adb76ec861211d1a2bd))
+
+
 ## v1.1.1 (2026-03-01)
 
 ### Bug Fixes
