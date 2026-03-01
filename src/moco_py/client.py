@@ -41,6 +41,10 @@ if TYPE_CHECKING:
         InvoiceReminders,
     )
     from .resources.invoices import AsyncInvoices, Invoices
+    from .resources.offer_customer_approval import (
+        AsyncOfferCustomerApprovals,
+        OfferCustomerApprovals,
+    )
     from .resources.offers import AsyncOffers, Offers
     from .resources.planning_entries import (
         AsyncPlanningEntries,
@@ -67,6 +71,14 @@ if TYPE_CHECKING:
     )
     from .resources.project_tasks import AsyncProjectTasks, ProjectTasks
     from .resources.projects import AsyncProjects, Projects
+    from .resources.purchase_bookkeeping_exports import (
+        AsyncPurchaseBookkeepingExports,
+        PurchaseBookkeepingExports,
+    )
+    from .resources.purchase_budgets import (
+        AsyncPurchaseBudgets,
+        PurchaseBudgets,
+    )
     from .resources.purchase_categories import (
         AsyncPurchaseCategories,
         PurchaseCategories,
@@ -241,6 +253,12 @@ class Moco:
         return Offers(self._transport)
 
     @cached_property
+    def offer_customer_approvals(self) -> OfferCustomerApprovals:
+        from .resources.offer_customer_approval import OfferCustomerApprovals
+
+        return OfferCustomerApprovals(self._transport)
+
+    @cached_property
     def planning_entries(self) -> PlanningEntries:
         from .resources.planning_entries import PlanningEntries
 
@@ -305,6 +323,18 @@ class Moco:
         from .resources.purchases import Purchases
 
         return Purchases(self._transport)
+
+    @cached_property
+    def purchase_bookkeeping_exports(self) -> PurchaseBookkeepingExports:
+        from .resources.purchase_bookkeeping_exports import PurchaseBookkeepingExports
+
+        return PurchaseBookkeepingExports(self._transport)
+
+    @cached_property
+    def purchase_budgets(self) -> PurchaseBudgets:
+        from .resources.purchase_budgets import PurchaseBudgets
+
+        return PurchaseBudgets(self._transport)
 
     @cached_property
     def purchase_categories(self) -> PurchaseCategories:
@@ -541,6 +571,12 @@ class AsyncMoco:
         return AsyncOffers(self._transport)
 
     @cached_property
+    def offer_customer_approvals(self) -> AsyncOfferCustomerApprovals:
+        from .resources.offer_customer_approval import AsyncOfferCustomerApprovals
+
+        return AsyncOfferCustomerApprovals(self._transport)
+
+    @cached_property
     def planning_entries(self) -> AsyncPlanningEntries:
         from .resources.planning_entries import AsyncPlanningEntries
 
@@ -605,6 +641,20 @@ class AsyncMoco:
         from .resources.purchases import AsyncPurchases
 
         return AsyncPurchases(self._transport)
+
+    @cached_property
+    def purchase_bookkeeping_exports(self) -> AsyncPurchaseBookkeepingExports:
+        from .resources.purchase_bookkeeping_exports import (
+            AsyncPurchaseBookkeepingExports,
+        )
+
+        return AsyncPurchaseBookkeepingExports(self._transport)
+
+    @cached_property
+    def purchase_budgets(self) -> AsyncPurchaseBudgets:
+        from .resources.purchase_budgets import AsyncPurchaseBudgets
+
+        return AsyncPurchaseBudgets(self._transport)
 
     @cached_property
     def purchase_categories(self) -> AsyncPurchaseCategories:
