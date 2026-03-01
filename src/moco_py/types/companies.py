@@ -54,12 +54,12 @@ class Company(BaseModel):
     phone: str | None = None
     fax: str | None = None
     address: str | None = None
-    tags: list[str]
+    tags: list[str] = []
     user: EmbeddedUser | None = None
     info: str | None = None
     custom_properties: dict[str, Any] | None = None
     identifier: str | None = None
-    intern: bool
+    intern: bool | None = None
     billing_tax: float | None = None
     customer_vat: CustomerVat | None = None
     supplier_vat: SupplierVat | None = None
