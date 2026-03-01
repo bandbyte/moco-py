@@ -37,7 +37,7 @@ class User(BaseModel):
     birthday: datetime.date | None = None
     iban: str | None = None
     avatar_url: str | None = None
-    tags: list[str]
+    tags: list[str] = []
     custom_properties: dict[str, str] | None = None
     unit: EmbeddedUnit | None = None
     role: EmbeddedRole | None = None
