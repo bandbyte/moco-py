@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.1 (2026-03-01)
+
+### Bug Fixes
+
+- **types**: Make fields optional that API may omit
+  ([`51b1483`](https://github.com/bandbyte/moco-py/commit/51b1483218f62a705351d0756258a4dc98acf7fe))
+
+
 ## v1.1.0 (2026-03-01)
 
 ### Chores
