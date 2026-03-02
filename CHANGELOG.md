@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-03-02)
+
+### Features
+
+- **utils**: Add file_to_base64 helper for MOCO file upload endpoints
+  ([`6f35aea`](https://github.com/bandbyte/moco-py/commit/6f35aea8bc527e86ae9d166c8e817b1317fdece2))
+
+
 ## v1.1.2 (2026-03-01)
 
 ### Bug Fixes
